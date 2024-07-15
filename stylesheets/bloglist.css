@@ -236,7 +236,6 @@ h6 { font: 20px/20px "Red Hat Display", sans-serif;}
 h1, h2, h4, h5, h6 {
 	color: #FFFFFF;
 	font-weight: 900;
-	margin: 0 0 30px;
 }
 
 p {
@@ -395,26 +394,29 @@ input[type="color"],
 
 /* Header
 -------------------------------------------------------------- */
+
 .header {
-	max-width: 1920px;		
+	max-width: 1920px;
+	border-bottom: 1px solid #FFFFFF;
+	position: relative;
 }
 
-.header-inner {
-	max-width: 1110px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 16px;
-	display: flex;
-	align-items: center;
+@media only screen and (min-width: 1200px){
+	.header-inner{
+		max-width: 1110px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .header-inner .logo,
-.header-inner .nav-wrap {
+.header-inner .nav-wrap,
+.header-inner .menu-btn {
 	float: left;
 }
 
 .header-inner .logo {
-	padding: 0 117px 0 20px;
+	padding: 6px 117px 20px 20px;
 }
 
 /* navigation */
@@ -424,7 +426,7 @@ input[type="color"],
 
 #mainnav li:hover > ul {    	
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-		filter: alpha(opacity=100);
+		/* filter: alpha(opacity=100); */
 	opacity: 1;
     visibility: visible; 
     -webkit-transform: translate(0, 0);
@@ -494,25 +496,6 @@ input[type="color"],
 	           transition: all 0.2s ease-in-out;
 }
 
-#mainnav ul li ul li ul {			
-	left: 215px;
-	top: 0;
-	margin-left: -30px;
-	background-color: #fffcf2;
-}
-
-#mainnav ul li ul li ul li {
-	border-color: #e5e2d4;
-}
-
-#mainnav ul li ul li ul li a {
-	color: #323232;
-}
-
-#mainnav ul li ul li ul li a:hover {
-	color: #f1c40f;
-}
-
 .header.style1 #mainnav ul li.home a:before {
 	top: 0;
 }
@@ -522,19 +505,23 @@ input[type="color"],
 }
 
 #mainnav {
-	padding: 0 110px 0 0;
+	padding: 0 70px 0 0;
 }
 
 /* menu btn */
 
 .header-inner .menu-btn {
-	float: left;
+	padding: 20px 0 0 0;
+}
+
+.header-inner a.theme-btn {
+	line-height: 21.17px;
+	padding: 14px 20px;
 }
 
 /* Page Title
 -------------------------------------------------------------- */
+
 .page-title {
-	background: url(../images/) no-repeat center top;
-	background-size: cover;
-	padding: 100px 0;
+	background-image: url(../images/header/bg_header.png);
 }
